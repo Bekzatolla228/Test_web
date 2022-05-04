@@ -1,0 +1,17 @@
+{% extends "App_kz/base.html" %}
+{% block title %}About{% endblock %}
+{% block body %}
+    {% if news %}
+        {% for x in news %}
+            {% if x.sity == "Nursultan" %}
+                <div class="alert alert-warning mt-2">
+                    <h3>{{ x.title }}</h3>
+                    <p>{{ x.news | truncatewords:10}}</p>
+                    <a href="#">Continue</a>
+                </div>
+            {% endif %}
+        {% endfor %}
+    {% else %}
+        <h3>No content</h3>
+    {% endif %}
+{% endblock %}

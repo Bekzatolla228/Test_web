@@ -1,0 +1,15 @@
+{% extends "App_kz/base.html" %}
+{% block title %}Index{% endblock %}
+{% block body %}
+    {% if sities2 %}
+        {% for x in sities2 %}
+            <div class="alert alert-warning mt-2">
+                <h3>{{ x.title }}</h3>
+                <p>{{ x.description }}</p>
+                <a href="#">Continue</a>
+            </div>
+        {% endfor %}
+    {% else %}
+        <h3>No content</h3>
+    {% endif %}
+{% endblock %}
